@@ -6,7 +6,8 @@ import {
   SectionFour,
   FLexBoxIndex,
   TextWrapper,
-
+  GenPara,
+  GenHead2,
 } from "../styles/indexStyles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -113,9 +114,13 @@ export default function Home() {
       </SectionThree>
       <SectionFour>
         <div className="header_section4">
-          <div className="title_section4">
-            Technologies
-          </div>
+          <div className="title_section4">Technologies</div>
+          <GenPara lessSize grey>
+            Labore cillum nulla proident culpa incididunt esse magna labore
+            commodo nostrud. Ipsum velit velit aliquip amet culpa nostrud tempor
+            est ullamco enim sint. <br/> Reprehenderit aute voluptate et esse laboris
+            enim ipsum ad ad mollit do.
+          </GenPara>
         </div>
       </SectionFour>
     </>

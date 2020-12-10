@@ -132,17 +132,13 @@ const SectionThree = styled.section`
 const FLexBoxIndex = styled.div`
   display: flex;
   .image {
-    width: ${props => (
-      props.inverse ? "60%" : "40%"
-    )};
+    width: ${props => (props.inverse ? "60%" : "40%")};
   }
   img {
     width: 100%;
   }
   .text_section3 {
-    width: ${props => (
-      props.inverse ? "40%" : "60%"
-    )};
+    width: ${props => (props.inverse ? "40%" : "60%")};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,9 +177,23 @@ const GenHead2 = styled.h2`
   margin: 0;
 `
 const SectionFour = styled.section`
-  background-color: #21b2a6;
-  color: #ffffff;
-`
+    background-color: #505393;
+    color: #ffffff;
+    text-align: center;
+    .header_section4 {
+    width: 66%;
+    margin: 0 auto;
+    }
+    .title_section4 {
+    font-size: 3rem;
+    padding: 1.35em 0;
+    color: #ffffff;
+    border-bottom: 2px solid #464981;
+    text-transform: uppercase;
+    letter-spacing: 0.225em;
+    margin: 0;
+    }
+    `
 export {
   Banner,
   TextWrapper,
@@ -192,6 +202,6 @@ export {
   SectionThree,
   FLexBoxIndex,
   GenPara,
-    GenHead2,
-  SectionFour
+  GenHead2,
+  SectionFour,
 }
