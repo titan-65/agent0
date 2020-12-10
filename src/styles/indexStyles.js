@@ -4,13 +4,14 @@ const Banner = styled.div`
   &:after {
     content: "";
     display: block;
+    height: ${props => (props.parallax ? "80vh" : "100vh")};
     height: 100vh;
     width: 100%;
     background-image: url("banner.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    filter: blur(1px);
+    background-attachment: ${props => (props.parallax ? "fixed" : "scroll")};
   }
 `
 
@@ -165,7 +166,7 @@ const GenPara = styled.p`
   letter-spacing: ${props => (props.lessSpacing ? "0.075em" : "0.225em")};
   font-size: ${props => (props.lessSize ? "1.5rem" : "2.5rem")};
   line-height: ${props => (props.lessSize ? "2rem" : "3rem")};
-  color: ${props => (props.grey ? "#c8ece9" : "#ffffff")};
+  color: ${props => (props.grey ? "#131313" : "#ffffff")};
 `
 const GenHead2 = styled.h2`
   font-size: 3rem;
@@ -193,7 +194,73 @@ const SectionFour = styled.section`
     letter-spacing: 0.225em;
     margin: 0;
     }
+    .section4-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 66%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    }
+    .section4-grid > * {
+    padding: 3rem;
+    }
+    .section4-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    }
+    .section4-flex > h2 {
+     margin-left: 1rem;
+    }
     `
+const FormSection = styled.div`
+  position: absolute;
+  z-index: 1;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  form > .fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    appearance: none;
+    font-size: 2rem;
+    background-color: rgba(245,243,243,0.75);
+    border-radius: 3px;
+    border: none
+  }
+  input[type="text"],
+  input[type="email"] {
+    height: 2.75em;
+    padding: 0.75em 1em;
+  }
+  textarea {
+    padding: 0.75em 1em;
+  }
+  .button-primary {
+    background-color: #ed4933;
+    box-shadow: none;
+    color: #ffffff;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 0.225em;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+`
+
 export {
   Banner,
   TextWrapper,
@@ -204,4 +271,5 @@ export {
   GenPara,
   GenHead2,
   SectionFour,
+  FormSection
 }

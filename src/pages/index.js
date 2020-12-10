@@ -8,18 +8,21 @@ import {
   TextWrapper,
   GenPara,
   GenHead2,
+  FormSection
 } from "../styles/indexStyles"
+import Layout  from '../components/Layout/Layout'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faHeart, faCode, faGem, fas } from "@fortawesome/free-solid-svg-icons"
+import { fab, faHtml5, faJs, faReact, faCss3} from "@fortawesome/free-brands-svg-icons"
 import { Link } from "gatsby"
 import React from "react"
 
-library.add(faHeart, faCode, faGem, fas)
+library.add(faHeart, faCode, faGem, fas, fab)
 
 export default function Home() {
   return (
-    <>
+    <Layout>
       <section style={{ position: "relative" }}>
         <Banner></Banner>
         <TextWrapper>
@@ -122,7 +125,67 @@ export default function Home() {
             enim ipsum ad ad mollit do.
           </GenPara>
         </div>
+        {/*Item One*/}
+        <div className="section4-grid">
+          <div className="item1" style={{ backgroundColor: '#4D508E'}}>
+            <div className="section4_flex">
+              <FontAwesomeIcon icon={faReact} color="#00FFCC" fixedWidth/>
+              <GenHead2>React</GenHead2>
+            </div>
+            <GenPara lessSize lessSpacing grey>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </GenPara>
+          </div>
+        {/*  Item Two*/}
+          <div className="item2" style={{ backgroundColor: '#4D508E'}}>
+            <div className="section4_flex">
+              <FontAwesomeIcon icon="code" color="#00FFCC" fixedWidth/>
+              <GenHead2>React</GenHead2>
+            </div>
+            <GenPara lessSize lessSpacing grey>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </GenPara>
+          </div>
+        {/*  Item Three*/}
+          <div className="item3" style={{ backgroundColor: '#4D508E'}}>
+            <div className="section4_flex">
+              <FontAwesomeIcon icon={faJs} color="#00FFCC" fixedWidth/>
+              <GenHead2>Javascript</GenHead2>
+            </div>
+            <GenPara lessSize lessSpacing grey>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </GenPara>
+          </div>
+        {/*  Item Four*/}
+          <div className="item4" style={{ backgroundColor: '#4D508E'}}>
+            <div className="section4_flex">
+              <FontAwesomeIcon icon={faHtml5} color="#00FFCC" fixedWidth/>
+              <GenHead2>Html5</GenHead2>
+            </div>
+            <GenPara lessSize lessSpacing grey>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </GenPara>
+          </div>
+        </div>
       </SectionFour>
-    </>
+      <section style={{ position: "relative"}}>
+        <Banner parallax></Banner>
+        <FormSection>
+          <form name="contact" method="post" data-netlify="true">
+            <div className="fields">
+              <GenHead2>Contact Us</GenHead2>
+              <input type="text" name="name" id="name" placeholder="Please Enter your Name"/>
+              <input type="email" name="email" id="email" placeholder="Please Enter your Email"/>
+              <textarea name="message" id="message"
+                        placeholder="Enter your message" rows="7"></textarea>
+              <div className="actions">
+                <input className="button-primary" type="submit" value="Send Message" />
+              </div>
+            </div>
+          </form>
+        </FormSection>
+      </section>
+
+    </Layout>
   )
 }
