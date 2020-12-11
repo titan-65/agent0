@@ -23,9 +23,12 @@ export default function Navbar() {
 `
   return (
   <Header>
-    <GenHead2 none>
-    Agent
-  </GenHead2>
+    <Link to='/' style={{ color: "inherit"}}>
+      <GenHead2 none>
+        Agent
+      </GenHead2>
+    </Link>
+
 
     <div className="nav_items">
         <Link to="/jobs"><GenPara lessSize lessSpacing grey>Jobs</GenPara></Link>
